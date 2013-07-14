@@ -14,8 +14,8 @@ function lnDot {
 	fi
 }
 # Install realpath that is used in most of our scripts
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo apt-get install -y realpath
 # Build essential compiling tools
 sudo apt-get install -y build-essential checkinstall
@@ -46,7 +46,7 @@ sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # Install noip2 tool without configuration file
 cd $HOME
-git clone https://github.com/marcobox/setup
+git clone git@github.com:marcobox/setup.git
 cd setup
 tar xzf noip2.tar.gz -C /tmp
 cd /tmp/noip2
@@ -58,7 +58,7 @@ cd $HOME
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
-git clone https://github.com/marcobox/dotfiles.git
+git clone git@github.com:marcobox/dotfiles.git
 lnDot .screenrc .
 lnDot .bash_profile .
 lnDot .bashrc .
