@@ -14,7 +14,11 @@ function lnDot {
 	fi
 }
 # Install realpath that is used in most of our scripts
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install -y realpath
+# Build essential compiling tools
+sudo apt-get install -y build-essential checkinstall
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
 sudo apt-get install -y git-core
@@ -41,12 +45,15 @@ sudo apt-get update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # Install noip2 tool without configuration file
+cd $HOME
+git clone https://github.com/marcobox/setup
+cd setup
 tar xzf noip2.tar.gz -C /tmp
 cd /tmp/noip2
 sudo make install
 sudo update-rc.d noip defaults
 
-git pull and install dotfiles as well
+# git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
