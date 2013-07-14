@@ -54,7 +54,7 @@ git --git-dir="setup/.git" remote add origin git@github.com:marcobox/setup.git
 git --git-dir="setup/.git" remote add upstream https://github.com/startup-class/setup.git
 
 cd setup
-tar xzf noip2.tar.gz -C /tmp
+sudo tar --no-same-owner -xzf noip2.tar.gz -C /tmp/
 cd /tmp/noip2
 sudo make install
 sudo update-rc.d noip defaults
