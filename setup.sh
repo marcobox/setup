@@ -75,9 +75,12 @@ lnDot .bashrc_custom
 lnDot .tmux.conf
 lnDot .tmux.conf.debug
 lnDot .vimrc
+lnDot .vim
 lnDot .tmux
 lnDot .emacs.d
 lnDot .ssh
 lnDot .terminfo
+lnDot .gitconfig
+lnDot .jshintrc
 lnDot bin
 
