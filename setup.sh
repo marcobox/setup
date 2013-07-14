@@ -39,6 +39,12 @@ sudo apt-get install -y rlwrap
 sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+# Install noip2 tool without configuration file
+tar xzf noip2.tar.gz -C /tmp
+cd /tmp/noip2
+sudo make install
+sudo update-rc.d noip defaults
 
 git pull and install dotfiles as well
 cd $HOME
@@ -59,5 +65,4 @@ lnDot .ssh .
 lnDot .terminfo .
 lnDot bin .
 
-sudo cp -b setup/noip /etc/init.d/
 sudo chown root:root /etc/init.d/noip
