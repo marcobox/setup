@@ -19,6 +19,7 @@ function lnDot {
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install -y realpath
+sudp apt-get install -y exuberant-ctags
 # Build essential compiling tools
 sudo apt-get install -y build-essential checkinstall
 # Install nvm: node-version manager
@@ -64,7 +65,7 @@ cd $HOME
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
-git clone https://github.com/marcobox/dotfiles.git
+git --recursive clone https://github.com/marcobox/dotfiles.git
 git --git-dir="dotfiles/.git" remote rm origin
 git --git-dir="dotfiles/.git" remote add origin git@github.com:marcobox/dotfiles.git
 git --git-dir="dotfiles/.git" remote add upstream https://github.com/startup-class/dotfiles.git
