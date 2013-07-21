@@ -27,6 +27,11 @@ sudo apt-get install -y build-essential checkinstall
 sudo apt-get install -y git-core
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
+# Installing all necessary for livereload
+sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+sudo gem install bundle
+sudo gem install guard
+sudo gem install guard-livereload
 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
